@@ -12,8 +12,8 @@ print(image2.size)
 print(image2.shape)
 print(image2.dtype)
 
-image_12 = cv.resize(image,(256,256))
-image_22 = cv.resize(image2,(256,256))
+image_12 = cv.resize(image,(512,512))
+image_22 = cv.resize(image2,(512,512))
 
 
 print(image_12.size)
@@ -26,8 +26,20 @@ print(image_22.dtype)
 # cv.imshow("new image",image_12)
 # cv.imshow("new image2",image_22)
 
-image_comb=cv.addWeighted(image_12,0.4,image_22,0.4,0)
-cv.imshow("new image combined",image_comb)
+#image_comb=cv.addWeighted(image_12,0.4,image_22,0.6,0)
+
+#image_comb=cv.addWeighted(image_12,0.2,image_22,0.8,0)
+
+b,g,r  = cv.split(image_12)
+
+# cv.imshow("green channel",g) ## print green channel
+# cv.imshow("red channel",r) ## print green channel
+# cv.imshow("blue channel",b) ## print green channel
+
+recover_img=cv.merge((b,g,r))
+cv.imshow("recovered" , recover_img)
+
+#cv.imshow("new image combined",image_comb)
 cv.waitKey(5000) # number in millisec
 cv.destroyAllWindows()
 
