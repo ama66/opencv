@@ -5,7 +5,7 @@ import numpy as np
 ## issue these commands 
 # https://apple.stackexchange.com/questions/360851/add-access-to-the-macbook-camera-for-the-terminal-application
 # I used the following commands (these are meant to click a picture from your MacBook's camera):
-
+## Make sure you run from a regular Mac Os Terminal rather than MS VSCode embedded terminal.
 # ffmpeg -f avfoundation -list_devices true -i ""
 
 # List the devices attached to your computer. Get the device ID of your camera
